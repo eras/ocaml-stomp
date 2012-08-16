@@ -18,7 +18,7 @@ OCAMLFLAGS += -thread
 OCAMLPACKS[] =
 	lwt
 	lwt.unix
-	extlib
+	batteries
 	cryptokit
 	threads
 

@@ -29,10 +29,10 @@ struct
       ("count-subscribers/topic/" ^ topic) int_of_string "num-subscribers"
 
   let timeout_headers =
-    Option.map_default (fun timeout -> ["ack-timeout", string_of_float timeout]) []
+    BatOption.map_default (fun timeout -> ["ack-timeout", string_of_float timeout]) []
 
   let prefetch_headers conn =
-    Option.map_default
+    BatOption.map_default
       (fun n -> ["prefetch", string_of_int n]) [] conn.c_prefetch
 
   let subscribe_queue conn ?(auto_delete = false) queue =

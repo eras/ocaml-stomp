@@ -5,7 +5,7 @@ struct
   include Mq_adapter_base.Make_STOMP(CONC)
 
   let prefetch_headers conn =
-    Option.map_default
+    BatOption.map_default
       (fun n -> ["activemq.prefetchSize", string_of_int n]) [] conn.c_prefetch
 
   let subscribe_queue conn ?(auto_delete = false) queue =

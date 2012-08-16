@@ -1,4 +1,4 @@
 version="Git"
-requires="lwt lwt.unix extlib cryptokit threads"
+requires="lwt lwt.unix batteries cryptokit threads"
 archive(byte)="stomp.cma"
 archive(native)="stomp.cmxa"

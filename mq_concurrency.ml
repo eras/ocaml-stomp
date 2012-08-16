@@ -75,7 +75,7 @@ module Posix_thread : THREAD
 
   let locked f p =
     Mutex.lock p.mutex;
-    Std.finally (fun () -> Mutex.unlock p.mutex) f p
+    BatStd.finally (fun () -> Mutex.unlock p.mutex) f p
 
   let acquire p =
     locked
