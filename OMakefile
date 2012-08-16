@@ -45,6 +45,10 @@ toplevel: stomp.cma
 	ocamlfind ocamlmktop -package $(concat \,, $(OCAMLPACKS)) \
 	    -linkall -linkpkg stomp.cma -o $@ -thread
 
+.PHONY: install
+install: META stomp.cma stomp.cmxa
+	ocamlfind install stomp META *.cmi stomp.cma stomp.cmxa
+
 NATIVE_ENABLED = true
 
 OCAML_LIBS[] += stomp
